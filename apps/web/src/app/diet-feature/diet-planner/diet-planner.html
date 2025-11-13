@@ -1,0 +1,61 @@
+@let uiData = data();
+
+<form id="dietForm" [formGroup]="dietForm">
+  <div class="form-section">
+    <label class="form-label">Preferred Units</label>
+    <app-button-options
+      [options]="uiData.units"
+      [formElement]="dietForm.controls.preferredUnits"
+      (valueChanged)="onPreferredUnitsValueChanged($event)"
+    ></app-button-options>
+  </div>
+  <div class="form-section">
+    <label class="form-label">Gender</label>
+    <app-button-options [options]="uiData.genders" [formElement]="dietForm.controls.gender"></app-button-options>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-section">
+        <label class="form-label" for="height">Height</label>
+        <div class="input-group">
+          <input formControlName="height" type="number" class="form-control" id="height" placeholder="Enter height" required />
+          <span class="input-group-text" id="heightUnit">{{ heightUnit() }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-section">
+        <label class="form-label" for="weight">Weight</label>
+        <div class="input-group">
+          <input formControlName="weight" type="number" class="form-control" id="weight" placeholder="Enter weight" required />
+          <span class="input-group-text" id="weightUnit">{{ weightUnit() }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-section">
+    <label class="form-label" for="age">Age</label>
+    <input formControlName="age" type="number" class="form-control" id="age" placeholder="Enter your age" required />
+  </div>
+  <div class="form-section">
+    <label class="form-label">Body Fat Level</label>
+    <app-button-options [options]="uiData.bodyFats" [formElement]="dietForm.controls.bodyFat"></app-button-options>
+  </div>
+  <div class="form-section">
+    <label class="form-label">Goal</label>
+    <app-button-options [options]="uiData.goals" [formElement]="dietForm.controls.goal"></app-button-options>
+  </div>
+  <div class="form-section">
+    <label class="form-label" for="activity">Activity Level</label>
+    <select formControlName="activityLevel" class="form-select" id="activity" required>
+      @for (item of uiData.activityLevels; track item.value) {
+        <option [attr.selected]="item.value == '' ? true : null" [attr.disabled]="item.value == '' ? true : null" value="{{ item.value }}">
+          {{ item.label }}
+        </option>
+      }
+    </select>
+  </div>
+  <div class="text-center mt-4">
+    <button type="button" class="submit-btn" (click)="onSubmitClicked()">Generate My Diet Plan</button>
+  </div>
+</form>

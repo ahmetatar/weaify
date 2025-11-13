@@ -1,0 +1,35 @@
+:root {
+  --primary-gradient-start: #667eea;
+  --primary-gradient-end: #764ba2;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --border-light: #e2e8f0;
+  --background-light: #f7fafc;
+  --white: #ffffff;
+  --shadow-sm: 0 4px 12px rgba(102, 126, 234, 0.4);
+  --shadow-md: 0 10px 30px rgba(102, 126, 234, 0.4);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 15px 40px rgba(102, 126, 234, 0.5);
+  --border-radius-sm: 10px;
+  --border-radius-md: 20px;
+  --border-radius-lg: 50px;
+  --transition-standard: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+svg {
+  max-width: 300px;
+  height: auto;
+}

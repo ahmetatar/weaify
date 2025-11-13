@@ -1,0 +1,53 @@
+{
+  "units": [
+    { "value": "us", "label": "U.S. Standard" },
+    { "value": "metric", "label": "Metric" }
+  ],
+  "genders": [
+    { "value": "male", "label": "Male" },
+    { "value": "female", "label": "Female" },
+    { "value": "nonbinary", "label": "Non-binary" }
+  ],
+  "bodyFats": [
+    { "value": "low", "label": "Low" },
+    { "value": "medium", "label": "Medium" },
+    { "value": "high", "label": "High" }
+  ],
+  "goals": [
+    { "value": "lose_weight", "label": "Lose Weight" },
+    { "value": "maintain_weight", "label": "Maintain Weight" },
+    { "value": "gain_muscle", "label": "Gain Muscle" }
+  ],
+  "activityLevels": [
+    { "value": "", "label": "Choose your activity level" },
+    { "value": "desk", "label": "Desk job, light exercise" },
+    { "value": "light", "label": "Lightly active, workout 3–4 times/week" },
+    { "value": "active", "label": "Active daily, frequent exercise" },
+    { "value": "very", "label": "Very Athletic" },
+    { "value": "extreme", "label": "Extremely Athletic" }
+  ],
+  "unitsMap": {
+    "us": { "hText": "inches", "wText": "lbs" },
+    "metric": { "hText": "cm", "wText": "kg" }
+  },
+  "mealIcons": {
+    "breakfast": "🍳",
+    "morningSnack": "🍎",
+    "lunch": "🥗",
+    "afternoonSnack": "🥜",
+    "dinner": "🍽️"
+  },
+  "mealNames": {
+    "breakfast": "Breakfast",
+    "morningSnack": "Morning Snack",
+    "lunch": "Lunch",
+    "afternoonSnack": "Afternoon Snack",
+    "dinner": "Dinner"
+  },
+  "summaryLabels": {
+    "proteinGrams": "Protein",
+    "dailyCalories": "Calories",
+    "carbGrams": "Carb",
+    "fatGrams": "Fat"
+  }
+}

@@ -1,0 +1,37 @@
+@let uiData = data();
+
+<div class="container">
+  <div class="summary-card">
+    <div class="summary-title">Daily Nutritional Targets</div>
+    <div class="macros-grid">
+      @for (summaryItem of summary; track summaryItem.key) {
+        <div class="macro-item">
+          <div class="macro-value" [id]="summaryItem.key">{{summaryItem.value}}</div>
+          <div class="macro-label">{{summaryItem.label}}</div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="day-tabs" id="dayTabs">
+    <app-button-options [options]="dayOptions" (valueChanged)="onDayChanged($event)" />
+  </div>
+  <div id="mealsContent">
+    @for (item of selectedMeals() | keyvalue; track item.key) {
+      <div class="meals-container" [id]="'day'+selectedDay()">
+        <div class="meal-card">
+          <div class="meal-header">
+            <div class="meal-name">{{uiData.mealNames[item.key]}}</div>
+            <div class="meal-icon">{{uiData.mealIcons[item.key]}}</div>
+          </div>
+          <div class="meal-description">{{item.value.description}}</div>
+          <div class="macro-bars">
+            <div class="macro-bar protein-bar">Protein {{item.value.protein_pct}}%</div>
+            <div class="macro-bar carb-bar">Carbs {{item.value.carb_pct}}%</div>
+            <div class="macro-bar fat-bar">Fat {{item.value.fat_pct}}%</div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
