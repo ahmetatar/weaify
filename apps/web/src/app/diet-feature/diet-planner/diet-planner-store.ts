@@ -1,4 +1,5 @@
 import { DietPlanContract, UserInputContract } from '@weaify/shared-types';
+import { withStorage } from '@weaify/web-core';
 import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { HttpClient } from '@angular/common/http';
@@ -35,6 +36,7 @@ export const initialDietPlanState: DietPlanState = {
 export const DietPlannerStore = signalStore(
   { providedIn: 'root' },
   withState<DietPlanState>(initialDietPlanState),
+  withStorage('dietPlannerState', localStorage),
   withComputed((store) => ({
     planReady: computed(() => store.dietPlan().length > 0 && !store.isLoading()),
   })),

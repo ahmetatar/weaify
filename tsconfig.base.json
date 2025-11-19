@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@weaify/shared-types": ["libs/shared-types/src/index.ts"],
-      "@weaify/web-shared-components": ["libs/web-shared-components/src/index.ts"]
+      "@weaify/web-shared-components": ["libs/web-shared-components/src/index.ts"],
+      "@weaify/web-core": ["libs/web-core/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
